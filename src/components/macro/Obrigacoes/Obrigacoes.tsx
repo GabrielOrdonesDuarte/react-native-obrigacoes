@@ -1,11 +1,5 @@
 import React, { useEffect, useState as useStateReact } from "react";
-import {
-   ActivityIndicator,
-   TextInput,
-   Button,
-   DataTable,
-} from "react-native-paper";
-import { StyleSheet } from "react-native";
+import { ActivityIndicator, TextInput, Button } from "react-native-paper";
 import { buscaClientes } from "../../../helpers/requisicoesHttp/clientes/clientesRequisicoes";
 import SelectField from "../../micro/SelectField/SelectField";
 import { Container } from "../../styles/styles";
@@ -97,7 +91,6 @@ const Obrigacoes: any = () => {
                      clientesValue.get(),
                      competenciaDeValue
                   );
-                  // console.log(obrigacoesPendentes);
                   rowsFixo.set(obrigacoesPendentes);
                   botaoLoading.set(false);
                } catch (error) {
@@ -105,7 +98,7 @@ const Obrigacoes: any = () => {
                }
             }}
          >
-            Press me
+            Botao
          </Button>
          <Tabela
             rows={rowsFixo.attach(Downgraded).get()}
@@ -115,14 +108,5 @@ const Obrigacoes: any = () => {
       </Container>
    );
 };
-
-const styles = StyleSheet.create({
-   content: {
-      padding: 8,
-   },
-   first: {
-      flex: 2,
-   },
-});
 
 export default Obrigacoes;
