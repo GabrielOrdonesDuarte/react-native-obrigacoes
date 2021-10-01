@@ -37,6 +37,18 @@ const Obrigacoes: any = () => {
    };
    //
 
+   // Consts Select
+   const formatarParaSelect = (clientesArrayObj: any) => {
+      const exibe = clientesArrayObj.map((cliente: any) => {
+         const formatarCliente = { value: null, label: "", key: null };
+         formatarCliente.value = cliente.ID;
+         formatarCliente.key = cliente.ID;
+         formatarCliente.label = cliente.Razao_Social;
+         return formatarCliente;
+      });
+      return exibe;
+   };
+
    // UseEffect
    useEffect(() => {
       (async function fetch() {
@@ -114,15 +126,3 @@ const styles = StyleSheet.create({
 });
 
 export default Obrigacoes;
-
-// Consts Select
-const formatarParaSelect = (clientesArrayObj: any) => {
-   const exibe = clientesArrayObj.map((cliente: any) => {
-      const formatarCliente = { value: null, label: "", key: null };
-      formatarCliente.value = cliente.ID;
-      formatarCliente.key = cliente.ID;
-      formatarCliente.label = cliente.Razao_Social;
-      return formatarCliente;
-   });
-   return exibe;
-};
